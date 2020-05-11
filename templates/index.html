@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flask Google News</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Flask Google News</a>
+    </div>
+  </div>
+</nav>
+
+  <div class="jumbotron text-center">
+        <h1>Flask Google News</h1>
+  </div>
+  
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-4 nopadding">
+        <h3>Linux</h3>
+        <ul>
+            {% for i in linux %}
+            <li class="list-group-item">
+                <a href="{{ linux[loop.index0]['url'] }}">{{ linux[loop.index0]['title'] }}</a>
+                <p class="text-justify">{{ linux[loop.index0]['description'] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-4 nopadding">
+        <h3>Open-Source</h3>
+        <ul>
+            {% for i in os %}
+            <li class="list-group-item">
+                <a href="{{ os[loop.index0]['url'] }}">{{ os[loop.index0]['title'] }}</a>
+                <p class="text-justify">{{ os[loop.index0]['description'] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-4 nopadding">
+        <h3>Android</h3>        
+        <ul>
+            {% for i in android %}
+            <li class="list-group-item">
+                <a href="{{ android[loop.index0]['url'] }}">{{ android[loop.index0]['title'] }}</a>
+                <p class="text-justify">{{ android[loop.index0]['description'] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
